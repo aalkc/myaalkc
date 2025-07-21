@@ -1,0 +1,3 @@
+"""
+Customer API router module.
+"""
