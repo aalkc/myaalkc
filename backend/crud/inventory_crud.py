@@ -108,7 +108,7 @@ def update_inventory_item(db: Session, item_id: int, inventory_update: Inventory
             return None
             
         # Update only the fields that are provided (not None)
-        update_data = inventory_update.dict(exclude_unset=True)
+        update_data = inventory_update.model_dump(exclude_unset=True)
         
         for field, value in update_data.items():
             if hasattr(db_inventory, field):
