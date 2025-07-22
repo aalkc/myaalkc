@@ -5,6 +5,7 @@ Main FastAPI application for Amanat Al-Kalima Company ERP API.
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from routers.customer_router import router as customer_router
+from routers.inventory_router import router as inventory_router
 
 # Create FastAPI app instance
 app = FastAPI(
@@ -24,6 +25,7 @@ app.add_middleware(
 
 # Include routers
 app.include_router(customer_router)
+app.include_router(inventory_router)
 
 # Root endpoint
 @app.get("/")
